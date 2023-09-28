@@ -2,7 +2,7 @@
 function getHighScores() {
     var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     return highScores;
-}
+};
 
 // save high scores to local storage using a function
 function saveHighScores(initials, score) {
@@ -11,4 +11,9 @@ function saveHighScores(initials, score) {
     highScores.sort((a, b) => b.score - a.score); // sort highscores in descending order
     highScores = highScores.slice(0, 5); // keep only the top 5 scores
     localStorage.setItem("highScores", JSON.stringify(highScores));
+};
+
+// function to clear high scores
+function clearHighScores() {
+    localStorage.removeItem("highScores");
 };
