@@ -40,4 +40,7 @@ function initializeQuestions() {
     for (var i = 0; i <questions.length; i++) {
         questions[i].choices = shuffleChoices(questions[i].choices);
     }
-}
+};
+
+// call function upon page load
+initializeQuestions();
