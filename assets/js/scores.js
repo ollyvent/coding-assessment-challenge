@@ -17,3 +17,16 @@ function saveHighScores(initials, score) {
 function clearHighScores() {
     localStorage.removeItem("highScores");
 };
+
+// display high scores with a function
+function displayHighScores() {
+    var highScores = getHighScores();
+    var highScoresList = document.getElementById("highscores");
+    highScoresList.innerHTML = "";
+
+    for (var i = 0; i <highScores.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = `${highScores[i].initials}: ${highScores[i].score}`;
+        highScoresList.appendChild(listItem);
+    }
+}
