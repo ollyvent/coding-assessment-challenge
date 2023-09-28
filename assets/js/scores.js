@@ -16,4 +16,21 @@ var questions = [
         choices: ["declaring a variable,", "executing code conditionally", "creating loops"],
         correctAnswer: 1,
     },
-]
+];
+
+// randomize order of questions with a function
+function shuffleChoices(choices) {
+    var currentIndex = choices.length,
+    randomIndex,
+    temporaryValue;
+
+    while (currentIndex !==0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        temporaryValue = choices[currentIndex];
+        choices[currentIndex] = choices[randomIndex];
+        choices[randomIndex] = temporaryValue;
+    }
+    return choices;
+}
