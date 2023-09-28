@@ -34,3 +34,10 @@ function shuffleChoices(choices) {
     }
     return choices;
 }
+
+// initialize and shuffle questions using function
+function initializeQuestions() {
+    for (var i = 0; i <questions.length; i++) {
+        questions[i].choices = shuffleChoices(questions[i].choices);
+    }
+}
