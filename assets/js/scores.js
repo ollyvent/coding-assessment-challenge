@@ -30,3 +30,10 @@ function displayHighScores() {
         highScoresList.appendChild(listItem);
     }
 }
+
+// event listener clears the high scores on click of the button
+var clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", function () {
+    clearHighScores();
+    displayHighScores();
+});
