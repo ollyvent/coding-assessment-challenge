@@ -44,5 +44,20 @@ function startQuiz() {
     } else {
       endQuiz();
     }
-  }
+  };
   
+
+  // function to check answers
+  function checkAnswer(event) {
+    var selectedChoiceIndex = parseInt(event.target.getAttribute("data-index"));
+    var currentQuestion = questions[currentQuestionIndex];
+  
+    if (selectedChoiceIndex === currentQuestion.correctAnswer) {
+      score += 10;
+    } else {
+      timeLeft -= 10; // Penalty for incorrect answer
+    }
+  
+    currentQuestionIndex++;
+    displayQuestion();
+  }
