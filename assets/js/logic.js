@@ -77,4 +77,5 @@ function startQuiz() {
     displayQuestion();
   };
 
-  
+  // start quiz
+  startButton.addEventListener("click", startQuiz);
