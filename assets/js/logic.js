@@ -10,9 +10,19 @@ var choiceContainer = document.getElementById("choice");
 var timerElement = document.getElementById("title");
 
 function startQuiz() {
-    startButton.style.display = "none";
-    document.getElementById("start-screen").classList.add("hide");
-    document.getElementById("questions").classList.remove("hide");
+  startButton.style.display = "none";
+  document.getElementById("start-screen").classList.add("hide");
+  document.getElementById("questions").classList.remove("hide");
 
-    
-}
+  // begin timer
+  timerInterval = setInterval(function () {
+    timeLeft--;
+    timerElement.textContent = timeLeft;
+
+    if (timeLeft <= 0) {
+        endQuiz();
+    }
+  }, 1000);
+
+  displayQuestion();
+};
