@@ -67,7 +67,7 @@ Opera Firefox Edge Google Chrome IE
 
 ## Demo
 
-<video src="coding%20quiz.mp4" controls title="Title"></video>
+<video src="./assets/demo/coding quiz.mp4" controls title="Title"></video>
 
 ## License
 
