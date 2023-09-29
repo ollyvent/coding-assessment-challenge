@@ -67,7 +67,8 @@ Opera Firefox Edge Google Chrome IE
 
 ## Demo
 
-<video src="./assets/demo/coding quiz.mp4" controls title="Title"></video>
+<video src="./assets/demo/coding-quiz.mp4" controls title="Title"></video>
+https://clipchamp.com/watch/5Voxz0uypbs
 
 ## License
 
