@@ -24,6 +24,16 @@ var questions = [
     ],
     correctAnswer: 1,
   },
+  {
+    question: "what is the strict operator in javascript?",
+    choices: ["comparing values", "adding data", "comparing type and value"],
+    correctAnswer: 2,
+  },
+  {
+    question: "javascript native was built to live and function where?",
+    choices: ["in the browser", "front end", "backend"],
+    correctAnswer: 0,
+  },
 ];
 
 // randomize order of questions with a function
