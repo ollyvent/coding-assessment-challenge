@@ -5,7 +5,7 @@ function getHighScores() {
 }
 
 // save high scores to local storage using a function
-function saveHighScores(initials, score) {
+function saveHighScore(initials, score) {
   var highScores = getHighScores();
   highScores.push({ initials: initials, score: score });
   highScores.sort((a, b) => b.score - a.score); // sort highscores in descending order

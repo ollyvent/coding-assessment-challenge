@@ -5,9 +5,9 @@ var currentQuestionIndex = 0;
 var score = 0;
 
 var startButton = document.getElementById("start");
-var questionTitile = document.getElementById("question-title");
-var choiceContainer = document.getElementById("choice");
-var timerElement = document.getElementById("title");
+var questionTitle = document.getElementById("question-title");
+var choicesContainer = document.getElementById("choices");
+var timerElement = document.getElementById("time");
 
 function startQuiz() {
   startButton.style.display = "none";
@@ -62,20 +62,23 @@ function startQuiz() {
     displayQuestion();
   };
 
-  // function to end quiz
-  function checkAnswer(event) {
-    var selectedChoiceIndex = parseInt(event.target.getAttribute("data-index"));
-    var currentQuestion = questions[currentQuestionIndex];
+  function endQuiz() {
+    clearInterval(timerInterval);
+    document.getElementById("questions").classList.add("hide");
+    document.getElementById("end-screen").classList.remove("hide");
+    document.getElementById("final-score").textContent = score;
   
-    if (selectedChoiceIndex === currentQuestion.correctAnswer) {
-      score += 10;
-    } else {
-      timeLeft -= 10; // Penalty for incorrect answer
-    }
+    var submitButton = document.getElementById("submit");
+    var initialsInput = document.getElementById("initials");
   
-    currentQuestionIndex++;
-    displayQuestion();
-  };
+    submitButton.addEventListener("click", function () {
+      var initials = initialsInput.value.trim();
+      if (initials !== "") {
+        saveHighScore(initials, score);
+        window.location.href = "highscores.html";
+      }
+    });
+  }
 
   // start quiz
   startButton.addEventListener("click", startQuiz);
