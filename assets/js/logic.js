@@ -26,3 +26,23 @@ function startQuiz() {
 
   displayQuestion();
 };
+
+ // function to display question
+ function displayQuestion() {
+    if (currentQuestionIndex < questions.length) {
+      var currentQuestion = questions[currentQuestionIndex];
+      questionTitle.textContent = currentQuestion.question;
+      choicesContainer.innerHTML = "";
+  
+      for (var i = 0; i < currentQuestion.choices.length; i++) {
+        var choiceButton = document.createElement("button");
+        choiceButton.textContent = currentQuestion.choices[i];
+        choiceButton.setAttribute("data-index", i);
+        choiceButton.addEventListener("click", checkAnswer);
+        choicesContainer.appendChild(choiceButton);
+      }
+    } else {
+      endQuiz();
+    }
+  }
+  
